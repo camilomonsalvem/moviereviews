@@ -14,9 +14,9 @@ class Command(BaseCommand):
         
         for i in range(100):
             movie = movies[i]
-            exist = Movie.objects.filter(title = movie['Series_Title']).first()
+            exist = Movie.objects.filter(title = movie['title']).first()
             if not exist:
-                Movie.objects.create(title = movie['Series_Title'],
+                Movie.objects.create(title = movie['title'],
                                      image = 'movie/images/default.png',
-                                     genre = movie['Genre'],
-                                     year = movie['Released_Year'])
+                                     genre = movie['genre'],
+                                     year = movie['year'])
